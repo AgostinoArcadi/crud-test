@@ -22,7 +22,7 @@ public class StudentServiceTest {
 
     @Test
     void updateStudentWorking() {
-        Student student = new Student(1, "Agostino", "Arcadi", true);
+        Student student = new Student(1, "Agostino", "Arcadi", false);
 
         Student personaFromDb = studentRepository.save(student);
         assertThat(personaFromDb).isNotNull();

@@ -42,8 +42,11 @@ class StudentControllerTest {
 	void addStudent() throws Exception {
 		Student student = new Student(1, "Mario", "Rossi", true);
 
+        //objectMapper = classe di Jackson, converte oggetti Java in JSON e viceversa
 		String studentJson = objectMapper.writeValueAsString(student);
 
+        //mock.perform() = simula una chiamata HTTP al controller
+        //and...() = controlli e debug
 		this.mockMvc.perform(post("/v1/student")
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(studentJson))
